@@ -33,7 +33,7 @@ st.sidebar.divider()
 st.sidebar.info("📅 **Current Phase:** Workshop - Week 2\n\n🎯 **Goal:** Technical & Data Validation")
 st.sidebar.caption("Client: MSI Internal Pilot")
 
-# --- MOCK DATA (Based on your Excel Real Data) ---
+# --- MOCK DATA (Based on Real Data) ---
 data = {
     'Department': ['Finance', 'Operations', 'HR', 'Projects', 'Sales', 'NPO', 'H&S'],
     'Critical Process': ['UNBILLED Management', 'Timesheet Reconciliation', 'Contract Visa/Compliance', 'Financial Closing', 'Collections', 'Drive Test Logs', 'HSE Audits'],
@@ -50,7 +50,7 @@ if page == "Roadmap & Status":
     st.title("Strategic AI Transformation Roadmap")
     st.markdown("Detailed execution plan: **Phase 1 (Discovery)** through **Phase 3 (Scale)**.")
 
-    # Status Indicators (Aligned with PDF Weeks)
+    # Status Indicators (Aligned with Weeks)
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.success("✅ Week 1: Discovery")
@@ -67,7 +67,7 @@ if page == "Roadmap & Status":
 
     st.markdown("### Execution Timeline")
     
-    # 1. Create Dataframe with Specific Steps from the PDF
+    # 1. Create Dataframe with Specific Steps 
     df_gantt = pd.DataFrame([
         # --- PHASE 1: WEEK 1 (Discovery) ---
         dict(Task="1. Kick-off & Stakeholder Matrix", Start='2025-12-01', Finish='2025-12-02', Phase="Phase 1: Week 1 (Discovery)", Description="Scope Definition"),
@@ -85,7 +85,7 @@ if page == "Roadmap & Status":
         dict(Task="9. Managed Service (Live)", Start='2026-02-01', Finish='2026-03-30', Phase="Phase 3: Recurring Scale", Description="Monitoring & Optimization")
     ])
 
-    # 2. Configure the Chart to look like the PDF Timeline
+    # 2. Configure the Chart to look like a Timeline
     fig_gantt = px.timeline(
         df_gantt, 
         x_start="Start", 
@@ -103,16 +103,16 @@ if page == "Roadmap & Status":
         }
     )
 
-    # Iterar sobre las trazas para ocultar todas las fases excepto la actual
+    # Loop over traces to hide all phases except the current one
     current_phase_label = "Phase 1: Week 2 (Analysis)"
-    # Plotly crea una traza separada para cada valor único en la columna 'color'
-    # (en este caso, la columna 'Phase').
+    # Plotly creates a separate trace for each unique value in the 'color' column
+    # (in this case, the 'Phase' column).
     for trace in fig_gantt.data:
         if trace.name != current_phase_label:
-            # Si la fase NO es la actual, la ocultamos al inicio.
-            trace.visible = 'legendonly' # 'legendonly' oculta la traza del gráfico, pero la deja visible en la leyenda para que el usuario pueda hacer clic en ella y mostrarla.
+            # if the phase is NOT the current one, hide it initially.
+            trace.visible = 'legendonly' # 'legendonly' hides the trace from the chart but keeps it visible in the legend so users can click to show it.
         else:
-            # Si la fase ES la actual, la mostramos.
+            # if the phase IS the current one, show it.
             trace.visible = True
 
     # 3. Formatting to match the "Step-down" look
