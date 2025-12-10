@@ -1,0 +1,99 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.vscode/
+*.code-workspace
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Python tooling
+.mypy_cache/
+.pyre/
+.ropeproject/
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Sensitive / credentials
+*.pem
+*.key
+credentials/
+secrets.json
+
+# Other
+pip-wheel-metadata/
+*.egg-info/
+
+# Local config
+local_settings.py
+
+# Logs
+logs/
+*.log
+
+# Temporary
+*.tmp
+*.bak
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Optional: ignore virtual environment folders often used on Windows
+Scripts/
