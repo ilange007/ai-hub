@@ -190,7 +190,7 @@ elif page == "Opportunity Matrix":
 # --- PAGE 4: LIVE SOLUTIONS (UPSELL) ---
 elif page == "Live Solutions":
     st.title("MSI Applied AI Monitor")
-    st.markdown("Simulation of the Operations Dashboard included in the **Managed Service (Phase B)**.")
+    st.markdown("Simulation of the Operations Dashboard included in the **Managed Service (Stage II)**.")
     
     st.info("ℹ️ **Demo Mode:** This module activates upon subscription to the Applied AI Solution.")
 
